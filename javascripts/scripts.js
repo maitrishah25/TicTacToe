@@ -1,6 +1,18 @@
 console.log('...loaded')
 
 $(document).ready(function(){
+
+    // $('.grid-cell').on('click', function(){
+    //   var cell = $(e.target);
+    //   var cellID = $('id');
+    //   function makeMove(cellId){
+    //     if (! .notAvailable)
+    //       $(cellID).text('X');
+    //       $(cellID).addClass('notAvailable');
+    //       count++;
+    //     }
+    // })
+
   var f1;
   var f2;
   var f3;
@@ -14,7 +26,7 @@ $(document).ready(function(){
 
   $('#field1').on('click', function(){
     if (f1 !='X' && f1 !='O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f1 = 'X';
       count++;
       computerMove();
@@ -24,7 +36,7 @@ $(document).ready(function(){
 
   $('#field2').on('click', function(){
     if (f2 != 'X' && f2 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f2 = 'X';
       count++;
       computerMove();
@@ -34,7 +46,7 @@ $(document).ready(function(){
 
   $('#field3').on('click', function(){
     if (f3 != 'X' && f3 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f3 = 'X';
       count++;
       computerMove();
@@ -44,7 +56,7 @@ $(document).ready(function(){
 
   $('#field4').on('click', function(){
     if (f4 != 'X' && f4 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f4 = 'X';
       count++;
       computerMove();
@@ -54,7 +66,7 @@ $(document).ready(function(){
 
   $('#field5').on('click', function(){
     if (f5 != 'X' && f5 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f5 = 'X';
       count++;
       computerMove();
@@ -64,7 +76,7 @@ $(document).ready(function(){
 
   $('#field6').on('click', function(){
     if (f6 != 'X' && f6 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f6 = 'X';
       count++;
       computerMove();
@@ -74,7 +86,7 @@ $(document).ready(function(){
 
   $('#field7').on('click', function(){
     if(f7 != 'X' && f7 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f7 = 'X';
       count++;
       computerMove();
@@ -84,7 +96,7 @@ $(document).ready(function(){
 
   $('#field8').on('click', function(){
     if (f8 != 'X' && f8 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f8 = 'X';
       count++;
       computerMove();
@@ -94,7 +106,7 @@ $(document).ready(function(){
 
   $('#field9').on('click', function(){
     if (f9 != 'X' && f9 != 'O'){
-      $(this).css('background-image', 'url(css/x.png)');
+      $(this).text('X');
       f9 = 'X';
       count++;
       computerMove();
@@ -103,65 +115,79 @@ $(document).ready(function(){
   });
 
   function computerMove(){
-    var compIdx = Math.floor(Math.random() * 9)-1;
-    if (compIdx == 0 && f1 != 'X' && f1 != 'O'){
-      f1 = 'O';
-      count++;
-      $('#field1').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 1 && f2 != 'X' && f2 != 'O'){
-      f2 = 'O';
-      count++;
-      $('#field2').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 2 && f3 != 'X' && f3 != 'O'){
-      f3 = 'O';
-      count++;
-      $('#field3').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 3 && f4 != 'X' && f4 != 'O'){
-      f4 = 'O';
-      count++;
-      $('#field4').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 4 && f5 != 'X' && f5 != 'O'){
-      f5 = 'O';
-      count++;
-      $('#field5').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 5 && f6 != 'X' && f6 != 'O'){
-      f6 = 'O';
-      count++;
-      $('#field6').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 6 && f7 != 'X' && f7 != 'O'){
-      f7 = 'O';
-      count++;
-      $('#field7').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 7 && f8 != 'X' && f8 != 'O'){
-      f8 = 'O';
-      count++;
-      $('#field8').css('background-image', 'url(css/o.png)');
-      checkWin();
-    }
-    if (compIdx == 8 && f9 != 'X' && f9 != 'O'){
-      f9 = 'O';
-      count++;
-      $('#field9').css('background-image', 'url(css/o.png)');
-      checkWin();
+//TEST: when player makes a move, computer always makes a followup move until gave over.
+    var compIdx = Math.floor(Math.random() * 9);
+    compMadeMove = false;
+    while (compMadeMove != true){
+      if (compIdx == 0 && f1 != 'X' && f1 != 'O'){
+        f1 = 'O';
+        count++;
+        $('#field1').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 1 && f2 != 'X' && f2 != 'O'){
+        f2 = 'O';
+        count++;
+        $('#field2').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 2 && f3 != 'X' && f3 != 'O'){
+        f3 = 'O';
+        count++;
+        $('#field3').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 3 && f4 != 'X' && f4 != 'O'){
+        f4 = 'O';
+        count++;
+        $('#field4').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 4 && f5 != 'X' && f5 != 'O'){
+        f5 = 'O';
+        count++;
+        $('#field5').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 5 && f6 != 'X' && f6 != 'O'){
+        f6 = 'O';
+        count++;
+        $('#field6').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 6 && f7 != 'X' && f7 != 'O'){
+        f7 = 'O';
+        count++;
+        $('#field7').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 7 && f8 != 'X' && f8 != 'O'){
+        f8 = 'O';
+        count++;
+        $('#field8').text('O');
+        compMadeMove = true;
+        checkWin();
+      }
+      if (compIdx == 8 && f9 != 'X' && f9 != 'O'){
+        f9 = 'O';
+        count++;
+        $('#field9').text('O');
+        compMadeMove = true;        
+        checkWin();
+      }
     }
 
   };
 
     function checkWin(){
+//TEST: when either player makes any winning combination, the winner dialog displays.
       if (f1 == 'X' && f2 == 'X' && f3 == 'X'){
         winner();
       }
@@ -225,6 +251,7 @@ $(document).ready(function(){
   }
 
   function reset(){
+    $('td').text('');
     f1 = null;
     f2 = null;
     f3 = null;
@@ -234,15 +261,6 @@ $(document).ready(function(){
     f7 = null;
     f8 = null;
     f9 = null;
-    $('#field1').css('background-image', null);
-    $('#field2').css('background-image', null);
-    $('#field3').css('background-image', null);
-    $('#field4').css('background-image', null);
-    $('#field5').css('background-image', null);
-    $('#field6').css('background-image', null);
-    $('#field7').css('background-image', null);
-    $('#field8').css('background-image', null);
-    $('#field9').css('background-image', null);
   }
 
 })
