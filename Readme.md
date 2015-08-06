@@ -1,1 +1,3 @@
 ##TicTacToe
+
+![Flowchart](flowchart.jpg)
