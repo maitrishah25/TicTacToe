@@ -7,20 +7,27 @@ header {
   font-size: 4em;
   text-align: center;
   font-family: 'Damion', cursive;
+  animation-duration: 2s;
+  animation-name: fadeIn;
+
 }
 
 h4 {
   display: inline-block;
+  padding: 0 10px 0 10px;
 }
 
 #players{
   text-align: center;
+  font-family: 'Indie Flower', cursive;
 }
 
 table {
   background-color: #222222;
   border: 5px solid white;
   margin: 0 auto;
+  animation-duration: 2s;
+  animation-name: fadeIn;
 }
 
 td {
@@ -30,6 +37,16 @@ td {
   background-color: #eeeeee;
   height: 100px;
   width: 100px;
+}
+
+.playerMove {
+  animation-duration: 1s;
+  animation-name: flipInY;
+}
+
+.compMove {
+  animation-duration: 1s;
+  animation-name: pulse;
 }
 
 td:hover {
