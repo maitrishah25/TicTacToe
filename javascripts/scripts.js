@@ -32,7 +32,7 @@ $(document).ready(function(){
       f1 = 'X';
       count++;
       setTimeout(computerMove, 1000);
-      checkWin();
+      checkPlayerWin();
     }
   });
 
@@ -41,8 +41,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f2 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -51,8 +51,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f3 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -61,8 +61,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f4 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -71,8 +71,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f5 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -81,8 +81,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f6 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -91,8 +91,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f7 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -101,8 +101,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f8 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -111,8 +111,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f9 = 'X';
       count++;
+      checkPlayerWin();
       setTimeout(computerMove, 1000);
-      checkWin();
     }
   });
 
@@ -129,69 +129,69 @@ $(document).ready(function(){
         count++;
         $('#field1').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 2 && f2 != 'X' && f2 != 'O'){
         f2 = 'O';
         count++;
         $('#field2').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 3 && f3 != 'X' && f3 != 'O'){
         f3 = 'O';
         count++;
         $('#field3').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 4 && f4 != 'X' && f4 != 'O'){
         f4 = 'O';
         count++;
         $('#field4').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 5 && f5 != 'X' && f5 != 'O'){
         f5 = 'O';
         count++;
         $('#field5').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 6 && f6 != 'X' && f6 != 'O'){
         f6 = 'O';
         count++;
         $('#field6').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 7 && f7 != 'X' && f7 != 'O'){
         f7 = 'O';
         count++;
         $('#field7').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 8 && f8 != 'X' && f8 != 'O'){
         f8 = 'O';
         count++;
         $('#field8').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
       if (compIdx == 9 && f9 != 'X' && f9 != 'O'){
         f9 = 'O';
         count++;
         $('#field9').text('O').addClass('compMove');
         compMadeMove = true;
-        checkWin();
+        checkComputerWin();
       }
     }
 
   };
 
-    function checkWin(){
+    function checkPlayerWin(){
 //TEST: when either player makes any winning combination, the winner dialog displays.
       if (f1 == 'X' && f2 == 'X' && f3 == 'X'){
         playerWinCount++;
@@ -225,7 +225,8 @@ $(document).ready(function(){
         playerWinCount++;
         winner();
       }
-
+    }
+  function checkComputerWin(){
       if (f1 == 'O' && f2 == 'O' && f3 == 'O'){
         compWinCount++;
         loser();
@@ -258,25 +259,34 @@ $(document).ready(function(){
         compWinCount++;
         loser();
       }
-
+    }
+    function checkTie(){
       if (count === 9){
         tieGame();
       }
     };
 
+
   function winner(){
-    alert('winner!!!');
+  //TEST: once a winner is determined, game should reset
+    // alert('winner!!!');
+    var win = $('<div>').text('You won!!!').addClass('winMessage');
+    $('body').append(win);
     $('#player').text('Player: ' + playerWinCount);
-    reset();
+    setTimeout(reset, 3000);
   }
   function loser(){
-    alert('loser...');
+    // alert('loser...');
+    var lose = $('<div>').text('Sorry! You lose...').addClass('loseMessage');
+    $('body').append(lose);
     $('#comp').text('Computer: ' + compWinCount);
-    reset();
+    setTimeout(reset, 3000);
   }
   function tieGame(){
-    alert('it\'s a tie!!!');
-    reset();
+    // alert('it\'s a tie!!!');
+    var tie = $('<div>').text('Tie Game').addClass('tieMessage');
+    $('body').append(tie);
+    setTimeout(reset, 3000);
   }
 
   function reset(){
@@ -293,6 +303,9 @@ $(document).ready(function(){
     f8 = null;
     f9 = null;
     count = 0;
+    $('.winMessage').remove();
+    $('.loseMessage').remove();
+    $('.tieMessage').remove();
   }
 
 })

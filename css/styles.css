@@ -5,7 +5,7 @@ body {
   background-size: 100% 200%;
   animation-duration: 1s;
   animation-name: fadeIn;
-  animation-delay: 3s;
+  animation-delay: 1.5s;
 }
 
 /*#container {
@@ -13,6 +13,54 @@ body {
   margin: 0 auto;
   background-color: #86dbd5;
 }*/
+
+.winMessage {
+  text-align: center;
+  font-size: 7em;
+  font-family: 'Rokkitt', 'Helvetica', cursive;
+  animation-duration: .5s;
+  animation-name: zoomIn;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 50%;
+  height: 25%;
+  z-index: 10;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.loseMessage {
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Rokkitt', 'Helvetica', cursive;
+  animation-duration: .5s;
+  animation-name: zoomIn;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 50%;
+  height: 25%;
+  z-index: 10;
+  color: red;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.tieMessage {
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Rokkitt', 'Helvetica', cursive;
+  animation-duration: .5s;
+  animation-name: zoomIn;
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 50%;
+  height: 25%;
+  z-index: 10;
+  color: #86dbd5;
+  background-color: rgba(0,0,0,0.5);
+}
 
 h2 {
   font-size: 5em;
@@ -38,7 +86,7 @@ h4 {
 #players{
   margin: 0 auto;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Rokkitt', 'Helvetica', sans-serif;
 }
 
 table {
@@ -50,7 +98,7 @@ table {
 }
 
 td {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Indie Flower', 'Helvetica', sans-serif;
   font-size: 4em;
   text-align: center;
   border: 2px solid #222222;
