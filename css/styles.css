@@ -1,22 +1,37 @@
 body {
-
-  background-color: lightblue;
+  /*background-color: lightblue;*/
+  background-image: url('bg3.png');
+  /*background-repeat: no-repeat;*/
+  background-size: 100% 200%;
+  animation-duration: 1s;
+  animation-name: fadeIn;
+  animation-delay: 3s;
 }
 
-header {
+/*#container {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #86dbd5;
+}*/
+
+h2 {
   font-size: 5em;
   text-align: center;
   font-family: 'Damion', cursive;
-  animation-duration: 0.5s;
+  margin: 0 auto;
+  animation-duration: 1s;
+  animation-name: zoomIn;
+  /*animation-duration: 0.5s;
   animation-name: rotateIn;
-  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);*/
 
 }
 
 h4 {
   display: inline-block;
-  padding: 0 20px 0 20px;
-  animation-duration: 0.5s;
+  padding: 3px 40px 3px 40px;
+  background-color: #eeeeee;
+  animation-duration: 1s;
   animation-name: zoomInLeft;
 }
 
@@ -30,7 +45,7 @@ table {
   background-color: #eeeeee;
   border: 5px solid white;
   margin: 0 auto;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-name: fadeIn;
 }
 
@@ -55,5 +70,5 @@ td {
 }
 
 td:hover {
-  /*background-color: #dddddd;*/
+  background-color: #dddddd;
 }

@@ -31,7 +31,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f1 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -41,7 +41,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f2 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -51,7 +51,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f3 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -61,7 +61,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f4 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -71,7 +71,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f5 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -81,7 +81,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f6 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -91,7 +91,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f7 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -101,7 +101,7 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f8 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
@@ -111,14 +111,16 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f9 = 'X';
       count++;
-      computerMove();
+      setTimeout(computerMove, 1000);
       checkWin();
     }
   });
 
   function computerMove(){
+    console.log('computerMove')
 //TEST: when player makes a move, computer always makes a followup move until gave over.
     var compMadeMove = false;
+    if (count == 9 /*&& !winner && !loser (how do i write this?)*/){ compMadeMove = true; tieGame(); };
     while (compMadeMove !== true){
       var compIdx = Math.floor(Math.random() * 9)+1;
 
@@ -290,6 +292,7 @@ $(document).ready(function(){
     f7 = null;
     f8 = null;
     f9 = null;
+    count = 0;
   }
 
 })
