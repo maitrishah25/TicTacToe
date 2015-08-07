@@ -23,6 +23,8 @@ $(document).ready(function(){
   var f8;
   var f9;
   var count = 0;
+  var playerWinCount = 0;
+  var compWinCount = 0;
 
   $('#field1').on('click', function(){
     if (f1 !='X' && f1 !='O'){
@@ -190,46 +192,68 @@ $(document).ready(function(){
     function checkWin(){
 //TEST: when either player makes any winning combination, the winner dialog displays.
       if (f1 == 'X' && f2 == 'X' && f3 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f4 == 'X' && f5 == 'X' && f6 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f7 == 'X' && f8 == 'X' && f9 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f1 == 'X' && f4 == 'X' && f7 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f2 == 'X' && f5 == 'X' && f8 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f3 == 'X' && f6 == 'X' && f9 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f1 == 'X' && f5 == 'X' && f9 == 'X'){
+        playerWinCount++;
         winner();
       }
       if (f3 == 'X' && f5 == 'X' && f7 == 'X'){
+        playerWinCount++;
         winner();
       }
 
       if (f1 == 'O' && f2 == 'O' && f3 == 'O'){
+        compWinCount++;
         loser();
       }
       if (f4 == 'O' && f5 == 'O' && f6 == 'O'){
+        compWinCount++;
         loser();
       }
       if (f7 == 'O' && f8 == 'O' && f9 == 'O'){
+        compWinCount++;
         loser();
       }
       if (f1 == 'O' && f4 == 'O' && f7 == 'O'){
+        compWinCount++;
         loser();
       }
       if (f2 == 'O' && f5 == 'O' && f8 == 'O'){
+        compWinCount++;
         loser();
       }
       if (f3 == 'O' && f6 == 'O' && f9 == 'O'){
+        compWinCount++;
+        loser();
+      }
+      if (f1 == 'O' && f5 == 'O' && f9 == 'O'){
+        compWinCount++;
+        loser();
+      }
+      if (f3 == 'O' && f5 == 'O' && f7 == 'O'){
+        compWinCount++;
         loser();
       }
 
@@ -240,10 +264,12 @@ $(document).ready(function(){
 
   function winner(){
     alert('winner!!!');
+    $('#player').text('Player: ' + playerWinCount);
     reset();
   }
   function loser(){
     alert('loser...');
+    $('#comp').text('Computer: ' + compWinCount);
     reset();
   }
   function tieGame(){
@@ -253,6 +279,8 @@ $(document).ready(function(){
 
   function reset(){
     $('td').text('');
+    $('td').removeClass('playerMove');
+    $('td').removeClass('compMove');
     f1 = null;
     f2 = null;
     f3 = null;

@@ -4,29 +4,33 @@ body {
 }
 
 header {
-  font-size: 4em;
+  font-size: 5em;
   text-align: center;
   font-family: 'Damion', cursive;
-  animation-duration: 2s;
-  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-name: rotateIn;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
 
 }
 
 h4 {
   display: inline-block;
-  padding: 0 10px 0 10px;
+  padding: 0 20px 0 20px;
+  animation-duration: 0.5s;
+  animation-name: zoomInLeft;
 }
 
 #players{
+  margin: 0 auto;
   text-align: center;
   font-family: 'Indie Flower', cursive;
 }
 
 table {
-  background-color: #222222;
+  background-color: #eeeeee;
   border: 5px solid white;
   margin: 0 auto;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-name: fadeIn;
 }
 
@@ -34,21 +38,22 @@ td {
   font-family: 'Indie Flower', cursive;
   font-size: 4em;
   text-align: center;
-  background-color: #eeeeee;
+  border: 2px solid #222222;
+  /*background-color: #eeeeee;*/
   height: 100px;
   width: 100px;
 }
 
 .playerMove {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-name: flipInY;
 }
 
 .compMove {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-name: pulse;
 }
 
 td:hover {
-  background-color: #dddddd;
+  /*background-color: #dddddd;*/
 }
