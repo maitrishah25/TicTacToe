@@ -1,7 +1,6 @@
 body {
   /*background-color: lightblue;*/
   background-image: url('bg3.png');
-  /*background-repeat: no-repeat;*/
   background-size: 100% 200%;
   animation-duration: 1s;
   animation-name: fadeIn;
@@ -16,12 +15,13 @@ body {
 
 .winMessage {
   text-align: center;
-  font-size: 7em;
+  padding: 1em 0 1em 0;
+  font-size: 5em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
   position: absolute;
-  top: 300px;
+  top: 150px;
   left: 300px;
   width: 50%;
   height: 25%;
@@ -32,12 +32,13 @@ body {
 
 .loseMessage {
   text-align: center;
+  padding: 1em 0 1em 0;
   font-size: 5em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
   position: absolute;
-  top: 300px;
+  top: 150px;
   left: 300px;
   width: 50%;
   height: 25%;
@@ -48,12 +49,13 @@ body {
 
 .tieMessage {
   text-align: center;
+  padding: 1em 0 1em 0;
   font-size: 5em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
   position: absolute;
-  top: 300px;
+  top: 150px;
   left: 300px;
   width: 50%;
   height: 25%;
@@ -77,8 +79,9 @@ h2 {
 
 h4 {
   display: inline-block;
+  width: 80px;
   padding: 3px 40px 3px 40px;
-  background-color: #eeeeee;
+  background-color: #dddddd;
   animation-duration: 1s;
   animation-name: zoomInLeft;
 }

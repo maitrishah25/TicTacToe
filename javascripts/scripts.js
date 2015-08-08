@@ -2,14 +2,14 @@ console.log('...loaded')
 
 $(document).ready(function(){
 
-    // $('.grid-cell').on('click', function(){
     //   var cell = $(e.target);
     //   var cellID = $('id');
-    //   function makeMove(cellId){
-    //     if (! .notAvailable)
-    //       $(cellID).text('X');
-    //       $(cellID).addClass('notAvailable');
-    //       count++;
+    //   function playerMove(cellId){
+    //      $(cellID).on('click', function(){
+    //      if (cell != 'X' && cell != 'O'){
+    //     $(this).text('X').addClass('playerMove');
+    //     cell = 'X';
+    //     count++;
     //     }
     // })
 
@@ -31,8 +31,8 @@ $(document).ready(function(){
       $(this).text('X').addClass('playerMove');
       f1 = 'X';
       count++;
-      setTimeout(computerMove, 1000);
       checkPlayerWin();
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -42,7 +42,7 @@ $(document).ready(function(){
       f2 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
       f3 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -62,7 +62,7 @@ $(document).ready(function(){
       f4 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -72,7 +72,7 @@ $(document).ready(function(){
       f5 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
       f6 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -92,7 +92,7 @@ $(document).ready(function(){
       f7 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -102,7 +102,7 @@ $(document).ready(function(){
       f8 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -112,7 +112,7 @@ $(document).ready(function(){
       f9 = 'X';
       count++;
       checkPlayerWin();
-      setTimeout(computerMove, 1000);
+      // setTimeout(computerMove, 500);
     }
   });
 
@@ -193,73 +193,36 @@ $(document).ready(function(){
 
     function checkPlayerWin(){
 //TEST: when either player makes any winning combination, the winner dialog displays.
-      if (f1 == 'X' && f2 == 'X' && f3 == 'X'){
+
+      if ((f1 == 'X' && f2 == 'X' && f3 == 'X') ||
+          (f4 == 'X' && f5 == 'X' && f6 == 'X') ||
+          (f7 == 'X' && f8 == 'X' && f9 == 'X') ||
+          (f1 == 'X' && f4 == 'X' && f7 == 'X') ||
+          (f2 == 'X' && f5 == 'X' && f8 == 'X') ||
+          (f3 == 'X' && f6 == 'X' && f9 == 'X') ||
+          (f1 == 'X' && f5 == 'X' && f9 == 'X') ||
+          (f3 == 'X' && f5 == 'X' && f7 == 'X') ||
+          (f3 == 'X' && f5 == 'X' && f7 == 'X')){
         playerWinCount++;
         winner();
-      }
-      if (f4 == 'X' && f5 == 'X' && f6 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f7 == 'X' && f8 == 'X' && f9 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f1 == 'X' && f4 == 'X' && f7 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f2 == 'X' && f5 == 'X' && f8 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f3 == 'X' && f6 == 'X' && f9 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f1 == 'X' && f5 == 'X' && f9 == 'X'){
-        playerWinCount++;
-        winner();
-      }
-      if (f3 == 'X' && f5 == 'X' && f7 == 'X'){
-        playerWinCount++;
-        winner();
-      }
+        } else setTimeout(computerMove, 500);
     }
-  function checkComputerWin(){
-      if (f1 == 'O' && f2 == 'O' && f3 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f4 == 'O' && f5 == 'O' && f6 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f7 == 'O' && f8 == 'O' && f9 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f1 == 'O' && f4 == 'O' && f7 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f2 == 'O' && f5 == 'O' && f8 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f3 == 'O' && f6 == 'O' && f9 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f1 == 'O' && f5 == 'O' && f9 == 'O'){
-        compWinCount++;
-        loser();
-      }
-      if (f3 == 'O' && f5 == 'O' && f7 == 'O'){
+
+    function checkComputerWin(){
+
+      if ((f1 == 'O' && f2 == 'O' && f3 == 'O') ||
+          (f4 == 'O' && f5 == 'O' && f6 == 'O') ||
+          (f7 == 'O' && f8 == 'O' && f9 == 'O') ||
+          (f1 == 'O' && f4 == 'O' && f7 == 'O') ||
+          (f2 == 'O' && f5 == 'O' && f8 == 'O') ||
+          (f3 == 'O' && f6 == 'O' && f9 == 'O') ||
+          (f1 == 'O' && f5 == 'O' && f9 == 'O') ||
+          (f3 == 'O' && f5 == 'O' && f7 == 'O')){
         compWinCount++;
         loser();
       }
     }
+
     function checkTie(){
       if (count === 9){
         tieGame();
