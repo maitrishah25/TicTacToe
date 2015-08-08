@@ -1,22 +1,27 @@
 body {
   /*background-color: lightblue;*/
   background-image: url('bg3.png');
-  background-size: 100% 200%;
-  animation-duration: 1s;
+  background-position: left top;
+  margin: 0;
+  /*animation-duration: 1s;
   animation-name: fadeIn;
-  animation-delay: 1.5s;
+  animation-delay: 1s;*/
 }
 
-/*#container {
+#container {
   width: 50%;
   margin: 0 auto;
-  background-color: #86dbd5;
-}*/
+}
+
+#contain {
+  padding-bottom: 100px;
+  background-color: rgba(173,231,226,0.9);
+}
 
 .winMessage {
   text-align: center;
   padding: 1em 0 1em 0;
-  font-size: 5em;
+  font-size: 7em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
@@ -26,14 +31,17 @@ body {
   width: 50%;
   height: 25%;
   z-index: 10;
-  color: white;
-  background-color: rgba(0,0,0,0.5);
+  color: #1f9089;
+  /*-webkit-text-stroke: 2px #dddddd;*/
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  /*background-color: rgba(0,0,0,0.5);*/
+  background-color: rgba(255,255,255,0);
 }
 
 .loseMessage {
   text-align: center;
   padding: 1em 0 1em 0;
-  font-size: 5em;
+  font-size: 7em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
@@ -44,13 +52,15 @@ body {
   height: 25%;
   z-index: 10;
   color: red;
-  background-color: rgba(0,0,0,0.5);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  /*background-color: rgba(0,0,0,0.5);*/
+  background-color: rgba(255,255,255,0);
 }
 
 .tieMessage {
   text-align: center;
   padding: 1em 0 1em 0;
-  font-size: 5em;
+  font-size: 7em;
   font-family: 'Rokkitt', 'Helvetica', cursive;
   animation-duration: .5s;
   animation-name: zoomIn;
@@ -60,20 +70,29 @@ body {
   width: 50%;
   height: 25%;
   z-index: 10;
-  color: #86dbd5;
+  color: #25a798;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  /*background-color: rgba(0,0,0,0.5);*/
+  background-color: rgba(255,255,255,0);
+}
+
+header {
   background-color: rgba(0,0,0,0.5);
+  margin: 0;
 }
 
 h2 {
-  font-size: 5em;
+  font-size: 6em;
   text-align: center;
   font-family: 'Damion', cursive;
   margin: 0 auto;
+  color: #ade7e2;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   animation-duration: 1s;
-  animation-name: zoomIn;
+  animation-name: bounceInDown;
   /*animation-duration: 0.5s;
-  animation-name: rotateIn;
-  animation-timing-function: cubic-bezier(.42, 0, .58, 1);*/
+  animation-name: rotateIn;*/
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
 
 }
 
