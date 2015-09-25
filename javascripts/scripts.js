@@ -240,7 +240,7 @@ $(document).ready(function(){
   }
   function loser(){
     // alert('loser...');
-    var lose = $('<div>').text('Sorry! You lose...').addClass('loseMessage');
+    var lose = $('<div>').text('No Buenos!').addClass('loseMessage');
     $('body').append(lose);
     $('#comp').text('Computer: ' + compWinCount);
     setTimeout(reset, 3000);
